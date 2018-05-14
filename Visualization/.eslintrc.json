@@ -1,0 +1,62 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  },
+  "rules": {
+    "no-tabs": 0,
+    "jsx-a11y/no-redundant-roles": 0,
+    "linebreak-style": 0,
+    "no-undef": 0,
+    "indent": 0,
+    "max-len": 0,
+    "no-param-reassign": 0,
+    "no-shadow": 0,
+    "global-require": 0,
+    "func-names": 0,
+    "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": 0,
+    "no-unused-vars": ["error", { "args": "all" }],
+    "react/no-did-mount-set-state": 0,
+    "react/no-array-index-key": 0,
+    "react/jsx-indent-props": 0,
+    "react/jsx-indent": 0,
+    "jsx-a11y/alt-text": 0,
+    "import/newline-after-import": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/anchor-has-content": 0,
+    "jsx-a11y/label-has-for": 0,
+    "jsx-a11y/mouse-events-have-key-events": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "ignore"
+      }
+    ],
+    "eol-last": "error",
+    "import/order": "error",
+    "This next rule is just temporary until we start using PropTypes": 0,
+    "react/prop-types": 0
+  }
+}

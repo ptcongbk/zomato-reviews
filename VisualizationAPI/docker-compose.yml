@@ -1,0 +1,19 @@
+version: '3'
+
+services: 
+  zomato-review-api:
+    build: .
+    container_name: "zomato-review-api"
+    ports:
+      - "5006:5006"
+    volumes:
+      - .:/google-review-api
+    environment:
+     - MONGO_URL=mongodb://mongo:27017/
+   
+networks:
+  default: 
+    external:
+      name: mongonet
+
+ 
