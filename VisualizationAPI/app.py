@@ -6,7 +6,7 @@ from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 client = MongoClient('mongodb://mongo:27017/', 27017)
-#client = MongoClient('localhost', 27017)  # when dev, using this
+# client = MongoClient('localhost', 27017)  # when dev, using this
 
 
 @app.route('/getHotelsByPosition', methods=['GET'])
@@ -66,9 +66,25 @@ def getZomatoReview():
     output = []
     for s in reviews:
         star = str(s["Star"]).replace("stars", "").replace("star", "")
+        avatar = "../assets/images/person-icon.png"
+        level = ''
+        location = ''
+        levelText = ''
+        if "UserAvatar" in s:
+            avatar = s["UserAvatar"]
+        if "UserLevel" in s:
+            level = s["UserLevel"]
+        if "LevelText" in s:
+            levelText = s["LevelText"]
+        if "UserLocation" in s:
+            location = s["UserLocation"]
         output.append({
             'Name': s["Name"],
             'UserLink':  s["UserLink"],
+            'UserLevel':  level,
+            'LevelText':  levelText,
+            'UserAvatar':  avatar,
+            'UserLocation':  location,
             'Review':  s["Review"],
             'Star':  star,
             'PublishDate': s["PublishDate"],

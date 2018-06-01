@@ -171,3 +171,9 @@ a { color: inherit; }
   color: gray !important;
   font-size: 12px;
 }
+
+.mt-comment-level{
+  color: orange !important;
+  font-size: 14px;
+  clear:both;
+}

@@ -52,14 +52,16 @@ class ZomatoDetail extends React.Component {
                         <div className="mt-comment">
                             <div className="mt-comment-img">
                                 <a href={review.UserLink}>
-                                    <img src="../assets/images/person-icon.png" />
+                                    <img src={review.UserAvatar} style={{ width: '46px' }} />
                                 </a>
+
                             </div>
                             <div className="mt-comment-body">
                                 <div className="mt-comment-info">
                                     <span className="mt-comment-author">{review.Name}</span>
                                     <span className="mt-comment-date">{review.PublishDate}</span>
                                 </div>
+
                                 <div className={`rating ${review.Star > 0 ? 'display-block' : 'display-none'}`}>
                                     <Rating
                                         emptySymbol="fa fa-star-o"
@@ -69,6 +71,8 @@ class ZomatoDetail extends React.Component {
                                         readonly="true"
                                     />
                                 </div>
+                                <div className="mt-comment-level">{review.UserLevel} {review.LevelText} </div>
+                                <div className="mt-comment-location">{review.UserLocation}</div>
                                 <div className="mt-comment-text" dangerouslySetInnerHTML={{ __html: review.Review }} />
                             </div>
                         </div>
